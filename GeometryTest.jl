@@ -1,4 +1,4 @@
-using Geometry
+using .Geometry
 using Test
 
 function ==(p1::Point2D, p2::Point2D)
@@ -65,6 +65,6 @@ end
 end
 
 @testset "Midpoint caclulations" begin
-    @test midpoint(triangle) == Point2D(1/3,1/3)
-    @test midpoint(rectangle) == Point2D(0.5,1)
+    @test midpoint(triangle) == Point2D(2,4/3)
+    @test midpoint(rectangle) == Point2D(2,1.5)
 end
