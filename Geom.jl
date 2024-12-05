@@ -70,7 +70,7 @@ struct Polygon
         if length(coords) % 2 != 0
             throw(ArgumentError("The number of coordinates must be even to form pairs of (x, y)."))
         end
-    
+
         # Create pairs of coordinates
         points = [Point2D(coords[i], coords[i+1]) for i in 1:2:length(coords)-1]
         Polygon(points)  # Call the inner constructor
@@ -127,6 +127,13 @@ function isRectangular(polygon::Polygon)
 end
 
 
+"""
+```
+midpoint(p::Polyon)
+```
+calculates the midpoint of the polygon.
+"""
+midpoint(p::Polygon) = Point2D(mean(map(pt -> pt.x, p.points)), mean(map(pt -> pt.y, p.points)))
 
 
 end
